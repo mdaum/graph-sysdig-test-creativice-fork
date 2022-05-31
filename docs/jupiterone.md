@@ -53,7 +53,7 @@ If you need help with this integration, please contact
   needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the Sysdig **API Token** generated for use by JupiterOne.
 - Enter the **Region** for your Sysdig account
-  
+
 4. Click **Create Configuration** once all values are provided.
 
 # How to Uninstall
@@ -85,6 +85,7 @@ The following entities are created:
 | ---------- | ------------------- | --------------- |
 | Account    | `sysdig_account`    | `Account`       |
 | Image Scan | `sysdig_image_scan` | `Assessment`    |
+| Pipeline   | `sysdig_pipeline`   | `Image`         |
 | Team       | `sysdig_team`       | `Team`          |
 | User       | `sysdig_user`       | `User`          |
 
@@ -95,6 +96,7 @@ The following relationships are created:
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
 | --------------------- | --------------------- | --------------------- |
 | `sysdig_account`      | **HAS**               | `sysdig_image_scan`   |
+| `sysdig_account`      | **HAS**               | `sysdig_pipeline`     |
 | `sysdig_account`      | **HAS**               | `sysdig_team`         |
 | `sysdig_account`      | **HAS**               | `sysdig_user`         |
 | `sysdig_team`         | **HAS**               | `sysdig_user`         |

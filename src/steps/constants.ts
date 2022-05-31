@@ -10,6 +10,7 @@ export const Steps = {
   BUILD_ACCOUNT_AND_USER_RELATIONSHIP: 'build-account-and-user-relationship',
   TEAMS: 'fetch-teams',
   IMAGE_SCANS: 'fetch-image-scans',
+  PIPELINES: 'fetch-pipelines',
   BUILD_ACCOUNT_AND_IMAGE_SCAN_RELATIONSHIP:
     'build-account-and-image-scan-relationship',
   BUILD_ACCOUNT_AND_TEAM_RELATIONSHIP: 'build-account-and-team-relationship',
@@ -17,7 +18,7 @@ export const Steps = {
 };
 
 export const Entities: Record<
-  'ACCOUNT' | 'USER' | 'TEAM' | 'IMAGE_SCAN',
+  'ACCOUNT' | 'USER' | 'TEAM' | 'IMAGE_SCAN' | 'PIPELINE',
   StepEntityMetadata
 > = {
   ACCOUNT: {
@@ -40,10 +41,16 @@ export const Entities: Record<
     _type: 'sysdig_image_scan',
     _class: ['Assessment'],
   },
+  PIPELINE: {
+    resourceName: 'Pipeline',
+    _type: 'sysdig_pipeline',
+    _class: ['Image'],
+  },
 };
 
 export const Relationships: Record<
   | 'ACCOUNT_HAS_USER'
+  | 'ACCOUNT_HAS_PIPELINE'
   | 'ACCOUNT_HAS_TEAM'
   | 'TEAM_HAS_USER'
   | 'ACCOUNT_HAS_IMAGE_SCAN',
@@ -60,6 +67,12 @@ export const Relationships: Record<
     sourceType: Entities.ACCOUNT._type,
     _class: RelationshipClass.HAS,
     targetType: Entities.TEAM._type,
+  },
+  ACCOUNT_HAS_PIPELINE: {
+    _type: 'sysdig_account_has_pipeline',
+    sourceType: Entities.ACCOUNT._type,
+    _class: RelationshipClass.HAS,
+    targetType: Entities.PIPELINE._type,
   },
   TEAM_HAS_USER: {
     _type: 'sysdig_team_has_user',

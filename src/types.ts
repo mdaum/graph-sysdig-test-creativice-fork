@@ -113,3 +113,25 @@ export type SysdigResultResponse = {
   totalRows: number;
   metadata: SysdigResultMetadata;
 };
+
+export type SysdigMetadataV2 = {
+  page: {
+    returned: number;
+    matched: number;
+    next: string;
+  };
+};
+
+export type SysdigPipeline = {
+  id: string;
+  storedAt: string;
+  imageId: string;
+  imagePullString: string;
+  vulnsBySev: number[];
+  exploitCount: number;
+  policyEvaluationsPassed: boolean;
+};
+
+export type SysdigPipelineResponse = SysdigMetadataV2 & {
+  data: SysdigPipeline[];
+};
