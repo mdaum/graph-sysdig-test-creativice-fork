@@ -1,7 +1,6 @@
 import {
   createIntegrationEntity,
   Entity,
-  parseTimePropertyValue,
 } from '@jupiterone/integration-sdk-core';
 import { SysdigVulnerability } from '../../types';
 
