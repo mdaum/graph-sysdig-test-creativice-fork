@@ -361,7 +361,7 @@ Object {
       "systemRole": "ROLE_CUSTOMER",
       "username": "viragsf@gmail.com",
       "version": 2,
-      "webLink": "https://us_west_gcp.app.sysdig.com/secure/#/settings/users/10006755",
+      "webLink": "https://app.us4.sysdig.com/secure/#/settings/users/10006755",
     },
     Object {
       "_class": Array [
@@ -547,7 +547,7 @@ Object {
       "systemRole": "ROLE_CUSTOMER",
       "username": "austin.kelleher@jupiterone.dev",
       "version": 2,
-      "webLink": "https://us_west_gcp.app.sysdig.com/secure/#/settings/users/10006754",
+      "webLink": "https://app.us4.sysdig.com/secure/#/settings/users/10006754",
     },
   ],
   "collectedRelationships": Array [
@@ -764,7 +764,7 @@ Object {
       "systemRole": "ROLE_CUSTOMER",
       "username": "viragsf@gmail.com",
       "version": 2,
-      "webLink": "https://us_west_gcp.app.sysdig.com/secure/#/settings/users/10006755",
+      "webLink": "https://app.us4.sysdig.com/secure/#/settings/users/10006755",
     },
     Object {
       "_class": Array [
@@ -950,7 +950,7 @@ Object {
       "systemRole": "ROLE_CUSTOMER",
       "username": "austin.kelleher@jupiterone.dev",
       "version": 2,
-      "webLink": "https://us_west_gcp.app.sysdig.com/secure/#/settings/users/10006754",
+      "webLink": "https://app.us4.sysdig.com/secure/#/settings/users/10006754",
     },
   ],
   "encounteredTypes": Array [
