@@ -18,13 +18,21 @@ import {
 
 export type ResourceIteratee<T> = (page: T) => Promise<void>;
 
+const REGION_HOST = {
+  us_east: 'https://secure.sysdig.com/',
+  us_west: 'https://us2.app.sysdig.com/',
+  eu: 'https://eu1.app.sysdig.com/',
+  apac: 'https://app.au1.sysdig.com/',
+  us_west_gcp: 'https://app.us4.sysdig.com/',
+};
+
 export class APIClient {
   constructor(readonly config: IntegrationConfig) {}
 
   private readonly paginateEntitiesPerPage = 250;
 
   private withBaseUri(path: string): string {
-    return `https://${this.config.region}.app.sysdig.com/${path}`;
+    return `${REGION_HOST[this.config.region]}${path}`;
   }
 
   private async request(
