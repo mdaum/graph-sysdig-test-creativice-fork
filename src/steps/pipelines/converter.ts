@@ -8,7 +8,7 @@ import { SysdigPipeline } from '../../types';
 import { Entities } from '../constants';
 
 export function getPipelineKey(id: string): string {
-  return `sysdig_image_scan:${id}`;
+  return `sysdig_pipeline:${id}`;
 }
 
 export function createPipelineEntity(pipeline: SysdigPipeline): Entity {

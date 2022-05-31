@@ -3,6 +3,7 @@ import { usersSteps } from './users';
 import { teamsSteps } from './teams';
 import { scansSteps } from './scans';
 import { pipelinesSteps } from './pipelines';
+import { vulnerabilitiesSteps } from './vulnerabilities';
 
 const integrationSteps = [
   ...accountSteps,
@@ -10,6 +11,7 @@ const integrationSteps = [
   ...teamsSteps,
   ...scansSteps,
   ...pipelinesSteps,
+  ...vulnerabilitiesSteps,
 ];
 
 export { integrationSteps };

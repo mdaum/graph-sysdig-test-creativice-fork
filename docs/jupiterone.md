@@ -81,25 +81,27 @@ https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources  | Entity `_type`      | Entity `_class` |
-| ---------- | ------------------- | --------------- |
-| Account    | `sysdig_account`    | `Account`       |
-| Image Scan | `sysdig_image_scan` | `Assessment`    |
-| Pipeline   | `sysdig_pipeline`   | `Image`         |
-| Team       | `sysdig_team`       | `Team`          |
-| User       | `sysdig_user`       | `User`          |
+| Resources     | Entity `_type`         | Entity `_class` |
+| ------------- | ---------------------- | --------------- |
+| Account       | `sysdig_account`       | `Account`       |
+| Image Scan    | `sysdig_image_scan`    | `Assessment`    |
+| Pipeline      | `sysdig_pipeline`      | `Image`         |
+| Team          | `sysdig_team`          | `Team`          |
+| User          | `sysdig_user`          | `User`          |
+| Vulnerability | `sysdig_vulnerability` | `Vulnerability` |
 
 ### Relationships
 
 The following relationships are created:
 
-| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
-| --------------------- | --------------------- | --------------------- |
-| `sysdig_account`      | **HAS**               | `sysdig_image_scan`   |
-| `sysdig_account`      | **HAS**               | `sysdig_pipeline`     |
-| `sysdig_account`      | **HAS**               | `sysdig_team`         |
-| `sysdig_account`      | **HAS**               | `sysdig_user`         |
-| `sysdig_team`         | **HAS**               | `sysdig_user`         |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type`  |
+| --------------------- | --------------------- | ---------------------- |
+| `sysdig_account`      | **HAS**               | `sysdig_image_scan`    |
+| `sysdig_account`      | **HAS**               | `sysdig_pipeline`      |
+| `sysdig_account`      | **HAS**               | `sysdig_team`          |
+| `sysdig_account`      | **HAS**               | `sysdig_user`          |
+| `sysdig_pipeline`     | **HAS**               | `sysdig_vulnerability` |
+| `sysdig_team`         | **HAS**               | `sysdig_user`          |
 
 <!--
 ********************************************************************************

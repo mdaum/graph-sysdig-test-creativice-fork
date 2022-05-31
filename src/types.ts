@@ -114,13 +114,7 @@ export type SysdigResultResponse = {
   metadata: SysdigResultMetadata;
 };
 
-export type SysdigMetadataV2 = {
-  page: {
-    returned: number;
-    matched: number;
-    next: string;
-  };
-};
+export type SysdigMetadataV2 = {};
 
 export type SysdigPipeline = {
   id: string;
@@ -132,6 +126,40 @@ export type SysdigPipeline = {
   policyEvaluationsPassed: boolean;
 };
 
-export type SysdigPipelineResponse = SysdigMetadataV2 & {
+export type SysdigPipelineResponse = {
+  page: {
+    returned: number;
+    matched: number;
+    next: string;
+  };
   data: SysdigPipeline[];
+};
+
+export type SysdigVulnerability = {
+  id: string;
+  vuln: {
+    name: string;
+    severity: number;
+    cvssVersion: string;
+    cvssScore: number;
+    exploitable: boolean;
+    disclosureDate: string;
+  };
+  package: {
+    id: string;
+    name: string;
+    version: string;
+    type: string;
+    running: boolean;
+  };
+  fixedInVersion: string;
+};
+
+export type SysdigVulnerabilityResponse = {
+  page: {
+    returned: number;
+    matched: number;
+    offset: number;
+  };
+  data: SysdigVulnerability[];
 };

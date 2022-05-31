@@ -16,6 +16,8 @@ import {
   SysdigResultResponse,
   SysdigTeam,
   SysdigUser,
+  SysdigVulnerability,
+  SysdigVulnerabilityResponse,
 } from './types';
 import regionHostnames from './util/regionHostnames';
 
@@ -219,6 +221,45 @@ export class APIClient {
           await pageIteratee(pipeline);
         }
     } while (next);
+  }
+
+  /**
+   * Iterates each vulnerability resource in the provider.
+   *
+   * @param pageIteratee receives each resource to produce entities/relationships
+   * @param id resource id
+   */
+  public async iterateVulnerabilities(
+    id: string,
+    pageIteratee: ResourceIteratee<SysdigVulnerability>,
+  ): Promise<void> {
+    let body: SysdigVulnerabilityResponse;
+    let offset = -1;
+
+    do {
+      offset += 1;
+      const endpoint = this.withBaseUri(
+        `api/scanning/scanresults/v2/results/${id}/vulnPkgs?offset=${
+          offset * this.paginateEntitiesPerPage
+        }&limit=${this.paginateEntitiesPerPage}`,
+      );
+      const response = await this.request(endpoint, 'GET');
+
+      if (!response.ok) {
+        throw new IntegrationProviderAPIError({
+          endpoint,
+          status: response.status,
+          statusText: response.statusText,
+        });
+      }
+
+      body = await response.json();
+
+      if (body.data)
+        for (const vulnerability of body.data) {
+          await pageIteratee(vulnerability);
+        }
+    } while ((offset + 1) * this.paginateEntitiesPerPage < body.page.matched);
   }
 }
 
