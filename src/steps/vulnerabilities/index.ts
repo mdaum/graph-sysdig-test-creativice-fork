@@ -9,7 +9,7 @@ import { createAPIClient } from '../../client';
 
 import { IntegrationConfig } from '../../config';
 import { Steps, Entities, Relationships } from '../constants';
-import { createVulnerabilityEntity } from './converter';
+import { createVulnerabilityEntity, getVulnerabilityKey } from './converter';
 
 export async function fetchVulnerabilities({
   instance,
@@ -23,18 +23,19 @@ export async function fetchVulnerabilities({
       await apiClient.iterateVulnerabilities(
         pipelineEntity.id as string,
         async (vulnerability) => {
-          console.log(vulnerability);
-          const vulnerabilityEntity = await jobState.addEntity(
-            createVulnerabilityEntity(vulnerability),
-          );
+          if (!jobState.hasKey(getVulnerabilityKey(vulnerability.id))) {
+            const vulnerabilityEntity = await jobState.addEntity(
+              createVulnerabilityEntity(vulnerability),
+            );
 
-          await jobState.addRelationship(
-            createDirectRelationship({
-              _class: RelationshipClass.HAS,
-              from: pipelineEntity,
-              to: vulnerabilityEntity,
-            }),
-          );
+            await jobState.addRelationship(
+              createDirectRelationship({
+                _class: RelationshipClass.HAS,
+                from: pipelineEntity,
+                to: vulnerabilityEntity,
+              }),
+            );
+          }
         },
       );
     },

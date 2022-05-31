@@ -234,14 +234,11 @@ export class APIClient {
     pageIteratee: ResourceIteratee<SysdigVulnerability>,
   ): Promise<void> {
     let body: SysdigVulnerabilityResponse;
-    let offset = -1;
+    let offset = 0;
 
     do {
-      offset += 1;
       const endpoint = this.withBaseUri(
-        `api/scanning/scanresults/v2/results/${id}/vulnPkgs?offset=${
-          offset * this.paginateEntitiesPerPage
-        }&limit=${this.paginateEntitiesPerPage}`,
+        `api/scanning/scanresults/v2/results/${id}/vulnPkgs?filter&&limit=${20}&offset=${offset}&order=asc&sort=vulnSeverity`,
       );
       const response = await this.request(endpoint, 'GET');
 
@@ -254,12 +251,13 @@ export class APIClient {
       }
 
       body = await response.json();
+      offset = body.page.returned + body.page.offset;
 
       if (body.data)
         for (const vulnerability of body.data) {
           await pageIteratee(vulnerability);
         }
-    } while ((offset + 1) * this.paginateEntitiesPerPage < body.page.matched);
+    } while (offset < body.page.matched);
   }
 }
 
