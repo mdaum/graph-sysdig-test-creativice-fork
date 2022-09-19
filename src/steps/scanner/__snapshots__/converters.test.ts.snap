@@ -46,7 +46,9 @@ Object {
   ],
   "createdOn": undefined,
   "displayName": "John Doe",
-  "function": "scanning",
+  "function": Array [
+    "scanning",
+  ],
   "id": "10001234",
   "name": "user@email.com",
   "products": Array [

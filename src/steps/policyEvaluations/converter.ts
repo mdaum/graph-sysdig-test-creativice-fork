@@ -29,7 +29,6 @@ export function createPolicyEvaluationEntity(
         completedOn: imageScan.storedAt ?? 0,
         identifier: data.identifier,
         policyType: data.policyType,
-        passed: data.passed,
         evaluationResult: data.evaluationResult,
         'failuresCount.imageConfigCreationDate':
           data.failuresCount.imageConfigCreationDate,

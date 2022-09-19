@@ -435,7 +435,7 @@ describe('#buildScannerAndImageScansRelationship', () => {
         properties: {
           _class: { const: 'PERFORMED' },
           _type: {
-            const: 'sysdig_service_performed_image_scan',
+            const: 'sysdig_scanner_performed_image_scan',
           },
         },
       },

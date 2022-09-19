@@ -1,10 +1,17 @@
-import { getMockImageScan, getMockVulnerability } from '../../../test/mocks';
-import { createFindingEntity } from './converter';
+import {
+  getMockImageScanV2,
+  getMockPolicyEvaluation,
+} from '../../../test/mocks';
+import { createImageScanEntityV2 } from '../scans/converter';
+import { createPolicyEvaluationEntity } from './converter';
 
-describe('#createImageScanEntity', () => {
+describe('#createPolicyEvaluationEntity', () => {
   test('should convert to entity', () => {
     expect(
-      createFindingEntity(getMockVulnerability(), getMockImageScan().imageId),
+      createPolicyEvaluationEntity(
+        getMockPolicyEvaluation(),
+        createImageScanEntityV2(getMockImageScanV2()),
+      ),
     ).toMatchSnapshot();
   });
 });

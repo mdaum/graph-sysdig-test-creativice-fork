@@ -157,7 +157,7 @@ export const Relationships: Record<
     targetType: Entities.CVE._type,
   },
   POLICY_EVALUATION_REVIEWED_IMAGE_SCAN: {
-    _type: 'sysdig_policy_evaluation_reviewed',
+    _type: 'sysdig_policy_evaluation_reviewed_image_scan',
     sourceType: Entities.POLICY_EVALUATION._type,
     _class: RelationshipClass.REVIEWED,
     targetType: Entities.IMAGE_SCAN._type,
