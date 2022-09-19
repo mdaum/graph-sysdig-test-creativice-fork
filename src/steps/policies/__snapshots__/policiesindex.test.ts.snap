@@ -1,0 +1,358 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#fetchPolicies should collect data and build policy and account relationship 1`] = `
+Object {
+  "collectedEntities": Array [
+    Object {
+      "_class": Array [
+        "Account",
+      ],
+      "_key": "sysdig_account:50003375",
+      "_rawData": Array [
+        Object {
+          "name": "default",
+          "rawData": Object {
+            "accessKey": "1be2fe7d-f00f-4513-9a15-1384c35d8497",
+            "additionalRoles": Array [],
+            "agentInstallParams": Object {
+              "accessKey": "1be2fe7d-f00f-4513-9a15-1384c35d8497",
+              "checkCertificate": true,
+              "collectorAddress": "ingest.us4.sysdig.com",
+              "collectorPort": 6443,
+              "sslEnabled": true,
+            },
+            "currentTeam": 50006626,
+            "customer": Object {
+              "accessKey": "1be2fe7d-f00f-4513-9a15-1384c35d8497",
+              "dateCreated": 1661791442836,
+              "externalId": "fbd8b3fc-781c-4e7f-afac-a2ee9309f4c9",
+              "id": 5001686,
+              "name": null,
+            },
+            "customerSettings": Object {
+              "environment": Object {},
+              "plan": Object {
+                "allocatedAgentsCount": 15,
+                "indirectCustomer": false,
+                "maxAgents": 15,
+                "maxTeams": -1,
+                "metricsSettings": Object {
+                  "enableGlobalK8sAllPodContainers": false,
+                  "enablePromCalculatedIngestion": false,
+                  "enablePromScrapeV2": true,
+                  "enforce": false,
+                  "enforceAgentAggregation": true,
+                  "limits": Object {
+                    "appCheck": 500,
+                    "appCheckAggregationCount": 12,
+                    "connections": 80,
+                    "containerDensity": 200,
+                    "containerServerPorts": 5,
+                    "hostServerPorts": 10,
+                    "jmx": 500,
+                    "kubernetesJobs": 10000,
+                    "kubernetesPods": 10000,
+                    "limitKubernetesResources": false,
+                    "meerkatSuited": true,
+                    "progAggregationCount": 12,
+                    "promMetricsWeight": 0,
+                    "prometheus": 8000,
+                    "prometheusPerProcess": 500,
+                    "statsd": 1000,
+                    "topDevicesCount": 10,
+                    "topFilesCount": 10,
+                  },
+                  "showExperimentals": false,
+                },
+                "migratedToV2Direct": false,
+                "monitorEnabled": false,
+                "onDemandAgents": 0,
+                "overageAssessmentEligible": false,
+                "partner": "Direct",
+                "paymentsIntegrationId": Object {
+                  "id": "not present",
+                  "ttl": Object {
+                    "ttl": 43,
+                  },
+                },
+                "pricingPlan": "pro",
+                "secureEnabled": true,
+                "subscriptionState": "trialing",
+                "subscriptionVersion": 2,
+                "timelines": Array [
+                  Object {
+                    "from": null,
+                    "sampling": 10000000,
+                    "to": null,
+                  },
+                  Object {
+                    "from": null,
+                    "sampling": 60000000,
+                    "to": null,
+                  },
+                  Object {
+                    "from": null,
+                    "sampling": 600000000,
+                    "to": null,
+                  },
+                  Object {
+                    "from": null,
+                    "sampling": 3600000000,
+                    "to": null,
+                  },
+                  Object {
+                    "from": null,
+                    "sampling": 86400000000,
+                    "to": null,
+                  },
+                ],
+                "trialEndDate": 1664383443236,
+                "trialPlanName": "secure-enterprise-standard-monthly",
+              },
+              "sysdig": Object {
+                "buckets": Array [],
+                "enabled": false,
+                "enabledSSE": false,
+              },
+            },
+            "dateActivated": 1661791669709,
+            "dateCreated": 1661791442936,
+            "enabled": true,
+            "firstName": "Stefan",
+            "id": 50003375,
+            "intercomUserIdHash": "7941192844d448aedd650df4bd26799efd5fca275a1f1eef775ee67b6cf061ad",
+            "lastName": "Virag",
+            "lastSeenOnSecure": 1663489837650,
+            "lastUpdated": 1663489837650,
+            "name": "stefan.virag@contractor.jupiterone.com",
+            "oauth": false,
+            "pictureUrl": "http://www.gravatar.com/avatar/ba5b87ffa4527a556b5f6da95fe36fe5",
+            "products": Array [
+              "SDS",
+              "SDC",
+            ],
+            "properties": Object {
+              "has_been_invited": false,
+            },
+            "remoteWriteParams": Object {
+              "serverAddress": "app.us4.sysdig.com",
+            },
+            "resetPassword": false,
+            "status": "confirmed",
+            "systemRole": "ROLE_CUSTOMER",
+            "teamRoles": Array [
+              Object {
+                "admin": true,
+                "role": "ROLE_TEAM_MANAGER",
+                "teamId": 50006626,
+                "teamName": "Secure Operations",
+                "teamTheme": "#7BB0B2",
+                "userId": 50003375,
+                "userName": "stefan.virag@contractor.jupiterone.com",
+              },
+              Object {
+                "admin": true,
+                "role": "ROLE_TEAM_MANAGER",
+                "teamId": 50006625,
+                "teamName": "Monitor Operations",
+                "teamTheme": "#7BB0B2",
+                "userId": 50003375,
+                "userName": "stefan.virag@contractor.jupiterone.com",
+              },
+            ],
+            "termsAndConditions": true,
+            "timezone": "+00:00",
+            "uniqueIntercomUserId": "50003375.fbd8b3fc-781c-4e7f-afac-a2ee9309f4c9",
+            "username": "stefan.virag@contractor.jupiterone.com",
+            "version": 2,
+          },
+        },
+      ],
+      "_type": "sysdig_account",
+      "active": undefined,
+      "createdOn": undefined,
+      "displayName": "Stefan Virag",
+      "id": "50003375",
+      "name": "stefan.virag@contractor.jupiterone.com",
+      "status": "confirmed",
+      "username": "stefan.virag@contractor.jupiterone.com",
+    },
+    Object {
+      "_class": Array [
+        "Policy",
+      ],
+      "_key": "sysdig_policy:sysdig_best_practices",
+      "_rawData": Array [
+        Object {
+          "name": "default",
+          "rawData": Object {
+            "bundles": Array [
+              Object {
+                "bundleType": "predefined",
+                "creationTimestamp": "2022-03-08T16:42:57.270495Z",
+                "description": "Fail on Severe vulnerabilities that can be fixed.",
+                "id": 1,
+                "identifier": "severe_vulnerabilities_with_a_fix",
+                "name": "Severe vulnerabilities with a Fix",
+                "rules": Array [
+                  Object {
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "critical",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "type": "vulnIsFixable",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                  Object {
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "high",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": Object {
+                          "age": 30,
+                        },
+                        "type": "vulnIsFixableWithAge",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                  Object {
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "high",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "type": "vulnExploitableViaNetwork",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                ],
+                "updateTimestamp": "2022-03-08T16:42:57.270495Z",
+              },
+            ],
+            "creationTimestamp": "2022-09-02T11:58:59.03062Z",
+            "description": "Recommended out of the box image scanning checks.",
+            "id": 17384,
+            "identifier": "sysdig_best_practices",
+            "name": "Sysdig Best Practices",
+            "policyType": "alwaysApply",
+            "updateTimestamp": "2022-09-02T11:58:59.03062Z",
+          },
+        },
+      ],
+      "_type": "sysdig_policy",
+      "content": "Recommended out of the box image scanning checks.",
+      "createdOn": 1662119939030,
+      "creationTimestamp": 1662119939030,
+      "description": "Recommended out of the box image scanning checks.",
+      "displayName": "Sysdig Best Practices",
+      "id": "17384",
+      "identifier": "sysdig_best_practices",
+      "name": "Sysdig Best Practices",
+      "summary": "Recommended out of the box image scanning checks.",
+      "title": "Sysdig Best Practices",
+      "updateTimestamp": 1662119939030,
+    },
+    Object {
+      "_class": Array [
+        "Policy",
+      ],
+      "_key": "sysdig_policy:my-new-pipeline-policy-1",
+      "_rawData": Array [
+        Object {
+          "name": "default",
+          "rawData": Object {
+            "bundles": Array [
+              Object {
+                "bundleType": "custom",
+                "creationTimestamp": "2022-09-16T09:52:17.357177Z",
+                "description": "My new bundle description 1",
+                "id": 10803,
+                "identifier": "my-new-bundle-1",
+                "name": "My new bundle 1",
+                "rules": Array [
+                  Object {
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "critical",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": Object {
+                          "age": 7,
+                        },
+                        "type": "vulnAge",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                ],
+                "updateTimestamp": "2022-09-16T09:52:17.357177Z",
+              },
+            ],
+            "creationTimestamp": "2022-09-16T09:53:16.483187Z",
+            "description": "My New Pipeline Policy Description 1",
+            "id": 22461,
+            "identifier": "my-new-pipeline-policy-1",
+            "name": "My New Pipeline Policy 1",
+            "policyType": "alwaysApply",
+            "updateTimestamp": "2022-09-16T09:53:16.483187Z",
+          },
+        },
+      ],
+      "_type": "sysdig_policy",
+      "content": "My New Pipeline Policy Description 1",
+      "createdOn": 1663321996483,
+      "creationTimestamp": 1663321996483,
+      "description": "My New Pipeline Policy Description 1",
+      "displayName": "My New Pipeline Policy 1",
+      "id": "22461",
+      "identifier": "my-new-pipeline-policy-1",
+      "name": "My New Pipeline Policy 1",
+      "summary": "My New Pipeline Policy Description 1",
+      "title": "My New Pipeline Policy 1",
+      "updateTimestamp": 1663321996483,
+    },
+  ],
+  "collectedRelationships": Array [
+    Object {
+      "_class": "HAS",
+      "_fromEntityKey": "sysdig_account:50003375",
+      "_key": "sysdig_account:50003375|has|sysdig_policy:sysdig_best_practices",
+      "_toEntityKey": "sysdig_policy:sysdig_best_practices",
+      "_type": "sysdig_account_has_policy",
+      "displayName": "HAS",
+    },
+    Object {
+      "_class": "HAS",
+      "_fromEntityKey": "sysdig_account:50003375",
+      "_key": "sysdig_account:50003375|has|sysdig_policy:my-new-pipeline-policy-1",
+      "_toEntityKey": "sysdig_policy:my-new-pipeline-policy-1",
+      "_type": "sysdig_account_has_policy",
+      "displayName": "HAS",
+    },
+  ],
+  "encounteredTypes": Array [
+    "sysdig_account",
+    "sysdig_policy",
+    "sysdig_account_has_policy",
+  ],
+  "numCollectedEntities": 3,
+}
+`;

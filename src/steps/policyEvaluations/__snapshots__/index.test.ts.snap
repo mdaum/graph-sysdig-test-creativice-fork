@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#fetchImageScans should collect data 1`] = `
+Object {
+  "collectedEntities": Array [],
+  "encounteredTypes": Array [],
+  "numCollectedEntities": 0,
+}
+`;

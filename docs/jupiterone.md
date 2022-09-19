@@ -53,7 +53,7 @@ If you need help with this integration, please contact
   needs. You may leave this as `DISABLED` and manually execute the integration.
 - Enter the Sysdig **API Token** generated for use by JupiterOne.
 - Enter the **Region** for your Sysdig account
-  
+
 4. Click **Create Configuration** once all values are provided.
 
 # How to Uninstall
@@ -81,23 +81,33 @@ https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources  | Entity `_type`      | Entity `_class` |
-| ---------- | ------------------- | --------------- |
-| Account    | `sysdig_account`    | `Account`       |
-| Image Scan | `sysdig_image_scan` | `Assessment`    |
-| Team       | `sysdig_team`       | `Team`          |
-| User       | `sysdig_user`       | `User`          |
+| Resources         | Entity `_type`             | Entity `_class` |
+| ----------------- | -------------------------- | --------------- |
+| Account           | `sysdig_account`           | `Account`       |
+| CVE               | `cve`                      | `Vulnerability` |
+| Finding           | `sysdig_finding`           | `Finding`       |
+| Image Scan        | `sysdig_image_scan`        | `Assessment`    |
+| Policy            | `sysdig_policy`            | `Policy`        |
+| Policy Evaluation | `sysdig_policy_evaluation` | `Assessment`    |
+| Scanner           | `sysdig_scanner`           | `Service`       |
+| Team              | `sysdig_team`              | `Team`          |
+| User              | `sysdig_user`              | `User`          |
 
 ### Relationships
 
 The following relationships are created:
 
-| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
-| --------------------- | --------------------- | --------------------- |
-| `sysdig_account`      | **HAS**               | `sysdig_image_scan`   |
-| `sysdig_account`      | **HAS**               | `sysdig_team`         |
-| `sysdig_account`      | **HAS**               | `sysdig_user`         |
-| `sysdig_team`         | **HAS**               | `sysdig_user`         |
+| Source Entity `_type`      | Relationship `_class` | Target Entity `_type` |
+| -------------------------- | --------------------- | --------------------- |
+| `sysdig_account`           | **HAS**               | `sysdig_image_scan`   |
+| `sysdig_account`           | **HAS**               | `sysdig_policy`       |
+| `sysdig_account`           | **HAS**               | `sysdig_team`         |
+| `sysdig_account`           | **HAS**               | `sysdig_user`         |
+| `sysdig_image_scan`        | **IDENTIFIED**        | `sysdig_finding`      |
+| `sysdig_policy_evaluation` | **ENFORCES**          | `sysdig_policy`       |
+| `sysdig_policy_evaluation` | **REVIEWED**          | `sysdig_image_scan`   |
+| `sysdig_scanner`           | **PERFORMED**         | `sysdig_image_scan`   |
+| `sysdig_team`              | **HAS**               | `sysdig_user`         |
 
 <!--
 ********************************************************************************

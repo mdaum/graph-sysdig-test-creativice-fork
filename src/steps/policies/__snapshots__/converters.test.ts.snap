@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#createTeamEntity should convert to entity 1`] = `
+Object {
+  "_class": Array [
+    "Policy",
+  ],
+  "_key": "sysdig_policy:sysdig_best_practices",
+  "_rawData": Array [
+    Object {
+      "name": "default",
+      "rawData": Object {
+        "bundles": Array [],
+        "creationTimestamp": "2022-09-02T11:58:59.03062Z",
+        "description": "Recommended out of the box image scanning checks.",
+        "id": 17384,
+        "identifier": "sysdig_best_practices",
+        "name": "Sysdig Best Practices",
+        "policyType": "alwaysApply",
+        "updateTimestamp": "2022-09-02T11:58:59.03062Z",
+      },
+    },
+  ],
+  "_type": "sysdig_policy",
+  "content": "Recommended out of the box image scanning checks.",
+  "createdOn": 1662119939030,
+  "creationTimestamp": 1662119939030,
+  "description": "Recommended out of the box image scanning checks.",
+  "displayName": "Sysdig Best Practices",
+  "id": "17384",
+  "identifier": "sysdig_best_practices",
+  "name": "Sysdig Best Practices",
+  "summary": "Recommended out of the box image scanning checks.",
+  "title": "Sysdig Best Practices",
+  "updateTimestamp": 1662119939030,
+}
+`;

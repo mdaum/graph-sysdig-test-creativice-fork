@@ -37,6 +37,7 @@
     "@jupiterone/integration-sdk-testing": "^7.4.0"
   },
   "dependencies": {
+    "@lifeomic/attempt": "^3.0.2",
     "node-fetch": "2.6.1"
   }
 }
