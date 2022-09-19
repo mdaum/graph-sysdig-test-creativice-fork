@@ -23,17 +23,14 @@ export async function fetchFindings({
         apiClient.iterateFindings(
           imageScanEntity.id as string,
           async (vulnerability) => {
-            // console.log(JSON.stringify(vulnerability));
             const vulnerabilityDetails = await apiClient.fetchFindingDetails(
               imageScanEntity.id as string,
               vulnerability.id,
             );
 
-            // console.log(vulnerabilityDetails);
-            const findingEntity = createFindingEntity(vulnerabilityDetails);
-
-            await jobState.addEntity(findingEntity);
-            console.log('findingEntity added');
+            const findingEntity = await jobState.addEntity(
+              createFindingEntity(vulnerabilityDetails),
+            );
 
             await jobState.addRelationships([
               createDirectRelationship({

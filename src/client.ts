@@ -82,7 +82,6 @@ export class APIClient {
       );
       return response;
     } catch (err) {
-      console.log('request error: ', err);
       throw new IntegrationProviderAPIError({
         endpoint: uri,
         status: err.status,
@@ -276,7 +275,6 @@ export class APIClient {
       const endpoint = this.withBaseUri(
         `api/scanning/scanresults/v2/results/${imageId}/vulnPkgs?limit=${this.paginateEntitiesPerPage}&offset=${offset}`,
       );
-      console.log('iterateFindings endpoint:', endpoint);
       const response = await this.request(endpoint, 'GET');
 
       body = await response.json();
@@ -316,6 +314,7 @@ export class APIClient {
   ): Promise<void> {
     let body: PolicyEvaluations;
 
+    // pagination not working for this endpoint
     const endpoint = this.withBaseUri(
       `api/scanning/scanresults/v2/results/${imageId}/policyEvaluations`,
     );
