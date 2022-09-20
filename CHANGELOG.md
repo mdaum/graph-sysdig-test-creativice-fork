@@ -8,6 +8,27 @@ and this project adheres to
 
 ## [Unreleased]
 
+## 0.2.3 - 2022-08-31
+
+### Changed
+
+- Skipping duplicate `sysdig_image_scan` creation and adding informational
+  gathering logs to understand duplicate images scans better.
+
+## 0.2.2 - 2022-08-31
+
+### Changed
+
+- Temporarily disabled `verifyAuthentication` while the route used is serving
+  503's
+
+## 0.2.1 - 2022-08-30
+
+### Fixed
+
+- Added `analyzedAt` to the `_key` for `sysdig_image_scan` to ensure global
+  uniqueness.
+
 ## 0.1.0 - 2021-12-14
 
 ### Added
