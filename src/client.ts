@@ -297,15 +297,13 @@ export class APIClient {
     imageId: string,
     pageIteratee: ResourceIteratee<PolicyEvaluation>,
   ): Promise<void> {
-    let body: PolicyEvaluations;
-
     // pagination not working for this endpoint
     const endpoint = this.withBaseUri(
       `api/scanning/scanresults/v2/results/${imageId}/policyEvaluations`,
     );
     const response = await this.request(endpoint, 'GET');
 
-    body = await response.json();
+    const body = await response.json();
 
     for (const policy of body.data) {
       await pageIteratee(policy);
@@ -320,13 +318,11 @@ export class APIClient {
   public async iteratePolicies(
     pageIteratee: ResourceIteratee<Policy>,
   ): Promise<void> {
-    let body: Policies;
-
     // pagination not working for this endpoint
     const endpoint = this.withBaseUri(`api/scanning/policies/v2/policies`);
     const response = await this.request(endpoint, 'GET');
 
-    body = await response.json();
+    const body = await response.json();
 
     for (const policy of body.policies) {
       await pageIteratee(policy);
