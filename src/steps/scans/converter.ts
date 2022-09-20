@@ -54,7 +54,7 @@ export function createImageScanEntityV2(data: ImageScanV2): Entity {
         _type: Entities.IMAGE_SCAN._type,
         _class: Entities.IMAGE_SCAN._class,
         id: data.id,
-        name: data.metadata.pullString + ' ' + data.metadata.imageId,
+        name: data.metadata.pullString,
         storedAt,
         type: data.type,
         'metadata.imageId': data.metadata.imageId,

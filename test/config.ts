@@ -8,7 +8,7 @@ if (process.env.LOAD_ENV) {
   });
 }
 const DEFAULT_API_TOKEN = 'dummy-acme-client-secret';
-const DEFAULT_REGION = 'us2';
+const DEFAULT_REGION = 'us4';
 
 export const integrationConfig: IntegrationConfig = {
   apiToken: process.env.API_TOKEN || DEFAULT_API_TOKEN,

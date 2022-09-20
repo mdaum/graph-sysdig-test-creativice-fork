@@ -21,12 +21,11 @@ export async function fetchPolicyEvaluations({
     { _type: Entities.IMAGE_SCAN._type },
     async (imageScanEntity) => {
       if (imageScanEntity?.id) {
-        apiClient.iteratePolicyEvaluations(
+        await apiClient.iteratePolicyEvaluations(
           imageScanEntity.id as string,
           async (policyEvaluation) => {
-            const policyEvaluationEntity = createPolicyEvaluationEntity(
-              policyEvaluation,
-              imageScanEntity,
+            const policyEvaluationEntity = await jobState.addEntity(
+              createPolicyEvaluationEntity(policyEvaluation, imageScanEntity),
             );
             const policyEntity = (await jobState.findEntity(
               `sysdig_policy:${policyEvaluation.identifier}`,

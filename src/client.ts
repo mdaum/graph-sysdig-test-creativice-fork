@@ -91,24 +91,6 @@ export class APIClient {
   }
 
   public async verifyAuthentication(): Promise<void> {
-    const statusRoute = this.withBaseUri('api/v1/secure/overview/status');
-
-    try {
-      await this.request(statusRoute, 'GET');
-    } catch (err) {
-      if (err.code == 'PROVIDER_API_ERROR') {
-        await this.verifyAuthenticationV2();
-      } else {
-        throw new IntegrationProviderAuthenticationError({
-          endpoint: statusRoute,
-          status: err.code,
-          statusText: err.message,
-        });
-      }
-    }
-  }
-
-  public async verifyAuthenticationV2(): Promise<void> {
     const statusRoute = this.withBaseUri('api/benchmarks/v2/status');
     try {
       await this.request(statusRoute, 'GET');
@@ -270,6 +252,9 @@ export class APIClient {
   ): Promise<void> {
     let body: PaginatedVulnerabilities;
     let offset = 0;
+    // for testing purposes only
+    // uncomment below line to limit the findings per image scan
+    // offset = 62;
 
     do {
       const endpoint = this.withBaseUri(

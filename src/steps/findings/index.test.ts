@@ -6,7 +6,7 @@ import { IntegrationConfig } from '../../config';
 import { fetchFindings } from '.';
 import { integrationConfig } from '../../../test/config';
 import { setupSysdigRecording } from '../../../test/recording';
-import { Relationships } from '../constants';
+import { MappedRelationships, Relationships } from '../constants';
 import { fetchImageScans } from '../scans';
 
 describe('#fetchFindings', () => {
@@ -81,7 +81,7 @@ describe('#fetchFindings', () => {
           'package.version': { type: 'string' },
           'package.type': { type: 'string' },
           'package.path': { type: 'string' },
-          'package.running': { type: 'string' },
+          'package.running': { type: 'boolean' },
           fixedInVersion: { type: 'string' },
         },
       },
@@ -103,18 +103,9 @@ describe('#fetchFindings', () => {
     });
 
     expect(
-      context.jobState.collectedRelationships.filter(
-        (e) => e._type === Relationships.FINDING_IS_CVE._type,
+      context.jobState.collectedRelationships.some(
+        (e) => e._type === MappedRelationships.FINDING_IS_CVE._type,
       ),
-    ).toMatchDirectRelationshipSchema({
-      schema: {
-        properties: {
-          _class: { const: 'IS' },
-          _type: {
-            const: 'sysdig_image_scan_identified_finding',
-          },
-        },
-      },
-    });
-  });
+    ).toBeTruthy();
+  }, 120000);
 });

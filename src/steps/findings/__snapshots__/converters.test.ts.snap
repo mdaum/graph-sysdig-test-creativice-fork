@@ -96,7 +96,7 @@ Object {
   "vulnerability.cvssScore.value.version": "3.1",
   "vulnerability.description": "test",
   "vulnerability.disclosureDate": 1648252800000,
-  "vulnerability.exploit": null,
+  "vulnerability.exploit": "",
   "vulnerability.exploitable": false,
   "vulnerability.name": "CVE-2022-1587",
   "vulnerability.severity.reporter.name": "nvd",

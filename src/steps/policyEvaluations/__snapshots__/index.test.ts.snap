@@ -122,14 +122,14 @@ Object {
             "id": 50003375,
             "intercomUserIdHash": "7941192844d448aedd650df4bd26799efd5fca275a1f1eef775ee67b6cf061ad",
             "lastName": "Virag",
-            "lastSeenOnSecure": 1663575912770,
-            "lastUpdated": 1663575912770,
+            "lastSeenOnSecure": 1663673258108,
+            "lastUpdated": 1663673258108,
             "name": "stefan.virag@contractor.jupiterone.com",
             "oauth": false,
             "pictureUrl": "http://www.gravatar.com/avatar/ba5b87ffa4527a556b5f6da95fe36fe5",
             "products": Array [
-              "SDS",
               "SDC",
+              "SDS",
             ],
             "properties": Object {
               "has_been_invited": false,
@@ -424,7 +424,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "displayName": "debian",
       "fixablePackages": Array [],
       "id": "17144f2f45c295bc2fdcae5db51044ca",
       "internal": false,
@@ -439,7 +439,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129313792,
-      "name": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
@@ -627,7 +627,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "displayName": "debian",
       "fixablePackages": Array [
         Object {
           "exploitCount": 0,
@@ -715,7 +715,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129216000,
-      "name": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
@@ -735,13 +735,268 @@ Object {
         0,
       ],
     },
+    Object {
+      "_class": Array [
+        "Assessment",
+      ],
+      "_key": "sysdig_finding:17144f2f45c295bc9785414e83306ba9",
+      "_rawData": Array [
+        Object {
+          "name": "default",
+          "rawData": Object {
+            "bundles": Array [
+              Object {
+                "bundleType": "predefined",
+                "creationTimestamp": "2022-03-08T16:42:57.270495Z",
+                "id": "17144f2f45c295bce015408aa457a294",
+                "identifier": "severe_vulnerabilities_with_a_fix",
+                "name": "Severe vulnerabilities with a Fix",
+                "position": 0,
+                "rules": Array [
+                  Object {
+                    "evaluationResult": "passed",
+                    "failureType": "pkgVulnFailure",
+                    "id": "17144f2f45c295bc61f326e59dc0a2ab",
+                    "position": 0,
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "critical",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": null,
+                        "type": "vulnIsFixable",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                  Object {
+                    "evaluationResult": "passed",
+                    "failureType": "pkgVulnFailure",
+                    "id": "17144f2f45c295bc057744a35712a264",
+                    "position": 1,
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "high",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": Object {
+                          "age": 30,
+                        },
+                        "type": "vulnIsFixableWithAge",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                  Object {
+                    "evaluationResult": "failed",
+                    "failureType": "pkgVulnFailure",
+                    "id": "17144f2f45c295bca5ace87db0072c40",
+                    "position": 2,
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "high",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": null,
+                        "type": "vulnExploitableViaNetwork",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                ],
+                "updateTimestamp": "0001-01-01T00:00:00Z",
+              },
+            ],
+            "creationTimestamp": "2022-09-02T11:58:59.03062Z",
+            "evaluationResult": "failed",
+            "failuresCount": Object {
+              "imageConfigCreationDate": 0,
+              "imageConfigDefaultUser": 0,
+              "imageConfigEnvVariable": 0,
+              "imageConfigInstructionIsPkgManager": 0,
+              "imageConfigInstructionNotRecommended": 0,
+              "imageConfigLabel": 0,
+              "imageConfigSensitiveInformationAndSecrets": 0,
+              "vulnDenyList": 0,
+              "vulnSeverityAndThreats": 2,
+            },
+            "id": "17144f2f45c295bc9785414e83306ba9",
+            "identifier": "sysdig_best_practices",
+            "name": "Sysdig Best Practices",
+            "policyType": "alwaysApply",
+            "updateTimestamp": "2022-09-02T11:58:59.03062Z",
+          },
+        },
+      ],
+      "_type": "sysdig_policy_evaluation",
+      "category": "Vulnerability Scan",
+      "completedOn": 1663041226858,
+      "createdOn": 1662119939030,
+      "creationTimestamp": 1662119939030,
+      "displayName": "Sysdig Best Practices",
+      "evaluationResult": "failed",
+      "failuresCount.imageConfigCreationDate": 0,
+      "failuresCount.imageConfigDefaultUser": 0,
+      "failuresCount.imageConfigEnvVariable": 0,
+      "failuresCount.imageConfigInstructionIsPkgManager": 0,
+      "failuresCount.imageConfigInstructionNotRecommended": 0,
+      "failuresCount.imageConfigLabel": 0,
+      "failuresCount.imageConfigSensitiveInformationAndSecrets": 0,
+      "failuresCount.vulnDenyList": 0,
+      "failuresCount.vulnSeverityAndThreats": 2,
+      "id": "17144f2f45c295bc9785414e83306ba9",
+      "identifier": "sysdig_best_practices",
+      "internal": true,
+      "name": "Sysdig Best Practices",
+      "policyType": "alwaysApply",
+      "summary": "Sysdig Best Practices",
+      "updateTimestamp": 1662119939030,
+    },
+    Object {
+      "_class": Array [
+        "Assessment",
+      ],
+      "_key": "sysdig_finding:17140adb60b1639a9bc2d5b0f765e4d2",
+      "_rawData": Array [
+        Object {
+          "name": "default",
+          "rawData": Object {
+            "bundles": Array [
+              Object {
+                "bundleType": "predefined",
+                "creationTimestamp": "2022-03-08T16:42:57.270495Z",
+                "id": "17140adb60b1639ae1c0ff0af9168ba7",
+                "identifier": "severe_vulnerabilities_with_a_fix",
+                "name": "Severe vulnerabilities with a Fix",
+                "position": 0,
+                "rules": Array [
+                  Object {
+                    "evaluationResult": "failed",
+                    "failureType": "pkgVulnFailure",
+                    "id": "17140adb60b1639a81e2456b09095464",
+                    "position": 0,
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "critical",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": null,
+                        "type": "vulnIsFixable",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                  Object {
+                    "evaluationResult": "failed",
+                    "failureType": "pkgVulnFailure",
+                    "id": "17140adb60b1639aace9c8411ee07091",
+                    "position": 1,
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "high",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": Object {
+                          "age": 30,
+                        },
+                        "type": "vulnIsFixableWithAge",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                  Object {
+                    "evaluationResult": "failed",
+                    "failureType": "pkgVulnFailure",
+                    "id": "17140adb60b1639afcd99c079715c86e",
+                    "position": 2,
+                    "predicates": Array [
+                      Object {
+                        "extra": Object {
+                          "level": "high",
+                        },
+                        "type": "vulnSeverity",
+                      },
+                      Object {
+                        "extra": null,
+                        "type": "vulnExploitableViaNetwork",
+                      },
+                    ],
+                    "ruleType": "vulnSeverityAndThreats",
+                  },
+                ],
+                "updateTimestamp": "0001-01-01T00:00:00Z",
+              },
+            ],
+            "creationTimestamp": "2022-09-02T11:58:59.03062Z",
+            "evaluationResult": "failed",
+            "failuresCount": Object {
+              "imageConfigCreationDate": 0,
+              "imageConfigDefaultUser": 0,
+              "imageConfigEnvVariable": 0,
+              "imageConfigInstructionIsPkgManager": 0,
+              "imageConfigInstructionNotRecommended": 0,
+              "imageConfigLabel": 0,
+              "imageConfigSensitiveInformationAndSecrets": 0,
+              "vulnDenyList": 0,
+              "vulnSeverityAndThreats": 13,
+            },
+            "id": "17140adb60b1639a9bc2d5b0f765e4d2",
+            "identifier": "sysdig_best_practices",
+            "name": "Sysdig Best Practices",
+            "policyType": "alwaysApply",
+            "updateTimestamp": "2022-09-02T11:58:59.03062Z",
+          },
+        },
+      ],
+      "_type": "sysdig_policy_evaluation",
+      "category": "Vulnerability Scan",
+      "completedOn": 1662966099742,
+      "createdOn": 1662119939030,
+      "creationTimestamp": 1662119939030,
+      "displayName": "Sysdig Best Practices",
+      "evaluationResult": "failed",
+      "failuresCount.imageConfigCreationDate": 0,
+      "failuresCount.imageConfigDefaultUser": 0,
+      "failuresCount.imageConfigEnvVariable": 0,
+      "failuresCount.imageConfigInstructionIsPkgManager": 0,
+      "failuresCount.imageConfigInstructionNotRecommended": 0,
+      "failuresCount.imageConfigLabel": 0,
+      "failuresCount.imageConfigSensitiveInformationAndSecrets": 0,
+      "failuresCount.vulnDenyList": 0,
+      "failuresCount.vulnSeverityAndThreats": 13,
+      "id": "17140adb60b1639a9bc2d5b0f765e4d2",
+      "identifier": "sysdig_best_practices",
+      "internal": true,
+      "name": "Sysdig Best Practices",
+      "policyType": "alwaysApply",
+      "summary": "Sysdig Best Practices",
+      "updateTimestamp": 1662119939030,
+    },
   ],
   "encounteredTypes": Array [
     "sysdig_account",
     "sysdig_policy",
     "sysdig_account_has_policy",
     "sysdig_image_scan",
+    "sysdig_policy_evaluation",
+    "sysdig_policy_evaluation_reviewed_image_scan",
+    "sysdig_policy_evaluation_enforces_policy",
   ],
-  "numCollectedEntities": 5,
+  "numCollectedEntities": 7,
 }
 `;

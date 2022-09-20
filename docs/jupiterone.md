@@ -2,14 +2,15 @@
 
 ## Sysdig + JupiterOne Integration Benefits
 
-- Visualize Sysdig account, teams, and users in the JupiterOne graph.
+- Visualize Sysdig account, teams, users, policies, and findings in the
+  JupiterOne graph.
 - See relationships between Sysdig teams and users in your JupiterOne account.
 - Monitor changes to Sysdig users using JupiterOne alerts.
 
 ## How it Works
 
-- JupiterOne periodically fetches account details, teams, and users from Sysdig
-  to update the graph.
+- JupiterOne periodically fetches account details, teams, users, policies, and
+  findings from Sysdig to update the graph.
 - Write JupiterOne queries to review and monitor updates to the graph, or
   leverage existing queries.
 - Configure alerts to take action when JupiterOne graph changes, or leverage
@@ -84,7 +85,6 @@ The following entities are created:
 | Resources         | Entity `_type`             | Entity `_class` |
 | ----------------- | -------------------------- | --------------- |
 | Account           | `sysdig_account`           | `Account`       |
-| CVE               | `cve`                      | `Vulnerability` |
 | Finding           | `sysdig_finding`           | `Finding`       |
 | Image Scan        | `sysdig_image_scan`        | `Assessment`    |
 | Policy            | `sysdig_policy`            | `Policy`        |
@@ -103,6 +103,7 @@ The following relationships are created:
 | `sysdig_account`           | **HAS**               | `sysdig_policy`       |
 | `sysdig_account`           | **HAS**               | `sysdig_team`         |
 | `sysdig_account`           | **HAS**               | `sysdig_user`         |
+| `sysdig_finding`           | **IS**                | `cve`                 |
 | `sysdig_image_scan`        | **IDENTIFIED**        | `sysdig_finding`      |
 | `sysdig_policy_evaluation` | **ENFORCES**          | `sysdig_policy`       |
 | `sysdig_policy_evaluation` | **REVIEWED**          | `sysdig_image_scan`   |

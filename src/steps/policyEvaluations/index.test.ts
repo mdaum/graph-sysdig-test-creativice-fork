@@ -41,8 +41,8 @@ describe('#fetchPolicyEvaluations', () => {
       encounteredTypes: context.jobState.encounteredTypes,
     }).toMatchSnapshot();
 
-    const policies = context.jobState.collectedEntities.filter((e) =>
-      e._type.includes('sysdig_policy'),
+    const policies = context.jobState.collectedEntities.filter(
+      (e) => e._type === 'sysdig_policy',
     );
     expect(policies.length).toBeGreaterThan(0);
     expect(policies).toMatchGraphObjectSchema({

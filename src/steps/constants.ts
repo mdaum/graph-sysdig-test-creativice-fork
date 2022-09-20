@@ -1,6 +1,8 @@
 import {
   RelationshipClass,
+  RelationshipDirection,
   StepEntityMetadata,
+  StepMappedRelationshipMetadata,
   StepRelationshipMetadata,
 } from '@jupiterone/integration-sdk-core';
 
@@ -10,7 +12,7 @@ export const Steps = {
   BUILD_ACCOUNT_AND_USER_RELATIONSHIP: 'build-account-and-user-relationship',
   TEAMS: 'fetch-teams',
   IMAGE_SCANS: 'fetch-image-scans',
-  SCANNER: 'fetch-scanner',
+  SCANNER: 'fetch-scanner-details',
   FINDINGS: 'fetch-findings',
   POLICIES: 'fetch-policies',
   POLICY_EVALUATIONS: 'fetch-policy-evaluations',
@@ -27,11 +29,11 @@ export const Entities: Record<
   | 'USER'
   | 'TEAM'
   | 'IMAGE_SCAN'
-  | 'POLICY'
-  | 'POLICY_EVALUATION'
   | 'SCANNER'
   | 'FINDING'
-  | 'CVE',
+  | 'CVE'
+  | 'POLICY'
+  | 'POLICY_EVALUATION',
   StepEntityMetadata
 > = {
   ACCOUNT: {
@@ -81,6 +83,19 @@ export const Entities: Record<
   },
 };
 
+export const MappedRelationships: Record<
+  'FINDING_IS_CVE',
+  StepMappedRelationshipMetadata
+> = {
+  FINDING_IS_CVE: {
+    _type: 'sysdig_finding_is_cve',
+    sourceType: Entities.FINDING._type,
+    _class: RelationshipClass.IS,
+    targetType: Entities.CVE._type,
+    direction: RelationshipDirection.FORWARD,
+  },
+};
+
 export const Relationships: Record<
   | 'ACCOUNT_HAS_USER'
   | 'ACCOUNT_HAS_TEAM'
@@ -89,9 +104,6 @@ export const Relationships: Record<
   | 'ACCOUNT_HAS_POLICY'
   | 'SCANNER_PERFORMED_IMAGE_SCAN'
   | 'IMAGE_SCAN_IDENTIFIED_FINDING'
-  | 'IMAGE_SCAN_SCANS_MAPPED_IMAGE'
-  | 'MAPPED_IMAGE_IDENTIFIED_FINDING'
-  | 'FINDING_IS_CVE'
   | 'POLICY_EVALUATION_REVIEWED_IMAGE_SCAN'
   | 'POLICY_EVALUATION_ENFORCES_POLICY',
   StepRelationshipMetadata
@@ -137,24 +149,6 @@ export const Relationships: Record<
     sourceType: Entities.IMAGE_SCAN._type,
     _class: RelationshipClass.IDENTIFIED,
     targetType: Entities.FINDING._type,
-  },
-  IMAGE_SCAN_SCANS_MAPPED_IMAGE: {
-    _type: 'sysdig_image_scan_scans_mapped_image',
-    sourceType: Entities.IMAGE_SCAN._type,
-    _class: RelationshipClass.HAS,
-    targetType: 'Mapped Image',
-  },
-  MAPPED_IMAGE_IDENTIFIED_FINDING: {
-    _type: 'mapped_image_identified_sysdig_finding',
-    sourceType: 'Mapped Image',
-    _class: RelationshipClass.HAS,
-    targetType: Entities.FINDING._type,
-  },
-  FINDING_IS_CVE: {
-    _type: 'sysdig_finding_is_cve',
-    sourceType: Entities.FINDING._type,
-    _class: RelationshipClass.IS,
-    targetType: Entities.CVE._type,
   },
   POLICY_EVALUATION_REVIEWED_IMAGE_SCAN: {
     _type: 'sysdig_policy_evaluation_reviewed_image_scan',

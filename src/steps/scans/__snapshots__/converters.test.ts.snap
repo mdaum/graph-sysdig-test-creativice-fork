@@ -68,7 +68,7 @@ Object {
   "_type": "sysdig_image_scan",
   "category": "Image Scan",
   "createdOn": undefined,
-  "displayName": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+  "displayName": "debian",
   "fixablePackages": Array [],
   "id": "17144f2f45c295bc2fdcae5db51044ca",
   "internal": false,
@@ -83,7 +83,7 @@ Object {
   "metadata.os": "linux",
   "metadata.pullString": "debian",
   "metadata.size": 129313792,
-  "name": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+  "name": "debian",
   "packageCount": 96,
   "packageTypes": Array [
     "os",

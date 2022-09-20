@@ -1,11 +1,11 @@
-import { StepSpec } from '@jupiterone/integration-sdk-core';
+import { RelationshipClass, StepSpec } from '@jupiterone/integration-sdk-core';
 import { IntegrationConfig } from '../../../../src/config';
 
 export const usersSpec: StepSpec<IntegrationConfig>[] = [
   {
     /**
-     * ENDPOINT: n/a
-     * PATTERN: Singleton
+     * ENDPOINT: /api/v2/users/light
+     * PATTERN: Fetch Entities
      */
     id: 'fetch-users',
     name: 'Fetch Users',
@@ -18,6 +18,25 @@ export const usersSpec: StepSpec<IntegrationConfig>[] = [
     ],
     relationships: [],
     dependsOn: [],
+    implemented: true,
+  },
+  {
+    /**
+     * ENDPOINT: n/a
+     * PATTERN: Build Child Relationships
+     */
+    id: 'build-account-and-user-relationship',
+    name: 'Build Account and User Relationship',
+    entities: [],
+    relationships: [
+      {
+        _type: 'sysdig_account_has_user',
+        sourceType: 'sysdig_account',
+        _class: RelationshipClass.HAS,
+        targetType: 'sysdig_user',
+      },
+    ],
+    dependsOn: ['fetch-users', 'fetch-account-details'],
     implemented: true,
   },
 ];

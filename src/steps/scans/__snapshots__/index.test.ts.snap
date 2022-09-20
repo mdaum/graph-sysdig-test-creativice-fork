@@ -122,8 +122,8 @@ Object {
             "id": 50003375,
             "intercomUserIdHash": "7941192844d448aedd650df4bd26799efd5fca275a1f1eef775ee67b6cf061ad",
             "lastName": "Virag",
-            "lastSeenOnSecure": 1663575912770,
-            "lastUpdated": 1663575912770,
+            "lastSeenOnSecure": 1663673258108,
+            "lastUpdated": 1663673258108,
             "name": "stefan.virag@contractor.jupiterone.com",
             "oauth": false,
             "pictureUrl": "http://www.gravatar.com/avatar/ba5b87ffa4527a556b5f6da95fe36fe5",
@@ -272,7 +272,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "displayName": "debian",
       "fixablePackages": Array [],
       "id": "17144f2f45c295bc2fdcae5db51044ca",
       "internal": false,
@@ -287,7 +287,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129313792,
-      "name": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
@@ -475,7 +475,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "displayName": "debian",
       "fixablePackages": Array [
         Object {
           "exploitCount": 0,
@@ -563,7 +563,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129216000,
-      "name": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
@@ -733,14 +733,14 @@ Object {
             "id": 50003375,
             "intercomUserIdHash": "7941192844d448aedd650df4bd26799efd5fca275a1f1eef775ee67b6cf061ad",
             "lastName": "Virag",
-            "lastSeenOnSecure": 1663575912770,
-            "lastUpdated": 1663575912770,
+            "lastSeenOnSecure": 1663673258108,
+            "lastUpdated": 1663673258108,
             "name": "stefan.virag@contractor.jupiterone.com",
             "oauth": false,
             "pictureUrl": "http://www.gravatar.com/avatar/ba5b87ffa4527a556b5f6da95fe36fe5",
             "products": Array [
-              "SDC",
               "SDS",
+              "SDC",
             ],
             "properties": Object {
               "has_been_invited": false,
@@ -792,8 +792,8 @@ Object {
       "id": "50003375",
       "name": "stefan.virag@contractor.jupiterone.com",
       "products": Array [
-        "SDC",
         "SDS",
+        "SDC",
       ],
       "status": "confirmed",
       "username": "stefan.virag@contractor.jupiterone.com",
@@ -894,7 +894,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "displayName": "debian",
       "fixablePackages": Array [],
       "id": "17144f2f45c295bc2fdcae5db51044ca",
       "internal": false,
@@ -909,7 +909,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129313792,
-      "name": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
@@ -1097,7 +1097,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "displayName": "debian",
       "fixablePackages": Array [
         Object {
           "exploitCount": 0,
@@ -1185,7 +1185,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129216000,
-      "name": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
@@ -1331,7 +1331,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "displayName": "debian",
       "fixablePackages": Array [],
       "id": "17144f2f45c295bc2fdcae5db51044ca",
       "internal": false,
@@ -1346,7 +1346,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129313792,
-      "name": "debian sha256:43d28810c1b4c28a1be3bac8e0e40fcc472b2bfcfcda952544ed99cb874d2b1a",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
@@ -1534,7 +1534,7 @@ Object {
       "_type": "sysdig_image_scan",
       "category": "Image Scan",
       "createdOn": undefined,
-      "displayName": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "displayName": "debian",
       "fixablePackages": Array [
         Object {
           "exploitCount": 0,
@@ -1622,7 +1622,7 @@ Object {
       "metadata.os": "linux",
       "metadata.pullString": "debian",
       "metadata.size": 129216000,
-      "name": "debian sha256:dd8bae8d259fed93eb54b3bca0adeb647fc07f6ef16745c8ed4144ada4d51a95",
+      "name": "debian",
       "packageCount": 96,
       "packageTypes": Array [
         "os",
