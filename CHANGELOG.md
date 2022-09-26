@@ -8,28 +8,33 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Added
+
+- Updated J1 SDK packages to v8
+- Updated tests to use new SDK patterns
 - Added rate limiting
 - Updated `verifyAuthentication` to use another endpoint
 - Added support for Image Scan entity from V2 API
+
 - Added support for ingesting the following **new** entities:
 
-| Resources         | Entity `_type`             | Entity `_class` |
-| ----------------- | -------------------------- | --------------- |
-| Finding           | `sysdig_finding`           | `Finding`       |
-| Policy            | `sysdig_policy`            | `Policy`        |
-| Policy Evaluation | `sysdig_policy_evaluation` | `Assessment`    |
-| Scanner           | `sysdig_scanner`           | `Service`       |
+| Resources | Entity `_type`   | Entity `_class` |
+| --------- | ---------------- | --------------- |
+| Finding   | `sysdig_finding` | `Finding`       |
+| Scanner   | `sysdig_scanner` | `Service`       |
 
 - Added support for ingesting the following **new** relationships:
 
-| Source Entity `_type`      | Relationship `_class` | Target Entity `_type` |
-| -------------------------- | --------------------- | --------------------- |
-| `sysdig_account`           | **HAS**               | `sysdig_policy`       |
-| `sysdig_finding`           | **IS**                | `cve`                 |
-| `sysdig_image_scan`        | **IDENTIFIED**        | `sysdig_finding`      |
-| `sysdig_policy_evaluation` | **ENFORCES**          | `sysdig_policy`       |
-| `sysdig_policy_evaluation` | **REVIEWED**          | `sysdig_image_scan`   |
-| `sysdig_scanner`           | **PERFORMED**         | `sysdig_image_scan`   |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
+| --------------------- | --------------------- | --------------------- |
+| `sysdig_image_scan`   | **IDENTIFIED**        | `sysdig_finding`      |
+| `sysdig_scanner`      | **PERFORMED**         | `sysdig_image_scan`   |
+
+- Added support for ingesting the following **new** mapped relationships:
+
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` | Direction |
+| --------------------- | --------------------- | --------------------- | --------- |
+| `sysdig_finding`      | **IS**                | `*cve*`               | FORWARD   |
 
 ## 0.2.3 - 2022-08-31
 

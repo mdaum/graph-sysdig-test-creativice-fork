@@ -1,10 +1,10 @@
-import { StepSpec } from '@jupiterone/integration-sdk-core';
+import { RelationshipClass, StepSpec } from '@jupiterone/integration-sdk-core';
 import { IntegrationConfig } from '../../../../src/config';
 
 export const scannerSpec: StepSpec<IntegrationConfig>[] = [
   {
     /**
-     * ENDPOINT: /api/user/me
+     * ENDPOINT: <n/a>
      * PATTERN: Singleton
      */
     id: 'fetch-scanner-details',
@@ -16,8 +16,15 @@ export const scannerSpec: StepSpec<IntegrationConfig>[] = [
         _class: ['Service'],
       },
     ],
-    relationships: [],
-    dependsOn: [],
+    relationships: [
+      {
+        _type: 'sysdig_account_has_scanner',
+        sourceType: 'sysdig_account',
+        _class: RelationshipClass.HAS,
+        targetType: 'sysdig_scanner',
+      },
+    ],
+    dependsOn: ['fetch-account'],
     implemented: true,
   },
 ];

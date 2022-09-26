@@ -16,18 +16,6 @@ export const usersSpec: StepSpec<IntegrationConfig>[] = [
         _class: ['User'],
       },
     ],
-    relationships: [],
-    dependsOn: [],
-    implemented: true,
-  },
-  {
-    /**
-     * ENDPOINT: n/a
-     * PATTERN: Build Child Relationships
-     */
-    id: 'build-account-and-user-relationship',
-    name: 'Build Account and User Relationship',
-    entities: [],
     relationships: [
       {
         _type: 'sysdig_account_has_user',
@@ -36,7 +24,7 @@ export const usersSpec: StepSpec<IntegrationConfig>[] = [
         targetType: 'sysdig_user',
       },
     ],
-    dependsOn: ['fetch-users', 'fetch-account-details'],
+    dependsOn: ['fetch-account'],
     implemented: true,
   },
 ];

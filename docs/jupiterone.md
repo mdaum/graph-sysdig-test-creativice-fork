@@ -82,33 +82,36 @@ https://github.com/JupiterOne/sdk/blob/main/docs/integrations/development.md
 
 The following entities are created:
 
-| Resources         | Entity `_type`             | Entity `_class` |
-| ----------------- | -------------------------- | --------------- |
-| Account           | `sysdig_account`           | `Account`       |
-| Finding           | `sysdig_finding`           | `Finding`       |
-| Image Scan        | `sysdig_image_scan`        | `Assessment`    |
-| Policy            | `sysdig_policy`            | `Policy`        |
-| Policy Evaluation | `sysdig_policy_evaluation` | `Assessment`    |
-| Scanner           | `sysdig_scanner`           | `Service`       |
-| Team              | `sysdig_team`              | `Team`          |
-| User              | `sysdig_user`              | `User`          |
+| Resources  | Entity `_type`      | Entity `_class` |
+| ---------- | ------------------- | --------------- |
+| Account    | `sysdig_account`    | `Account`       |
+| Finding    | `sysdig_finding`    | `Finding`       |
+| Image Scan | `sysdig_image_scan` | `Assessment`    |
+| Scanner    | `sysdig_scanner`    | `Service`       |
+| Team       | `sysdig_team`       | `Team`          |
+| User       | `sysdig_user`       | `User`          |
 
 ### Relationships
 
 The following relationships are created:
 
-| Source Entity `_type`      | Relationship `_class` | Target Entity `_type` |
-| -------------------------- | --------------------- | --------------------- |
-| `sysdig_account`           | **HAS**               | `sysdig_image_scan`   |
-| `sysdig_account`           | **HAS**               | `sysdig_policy`       |
-| `sysdig_account`           | **HAS**               | `sysdig_team`         |
-| `sysdig_account`           | **HAS**               | `sysdig_user`         |
-| `sysdig_finding`           | **IS**                | `cve`                 |
-| `sysdig_image_scan`        | **IDENTIFIED**        | `sysdig_finding`      |
-| `sysdig_policy_evaluation` | **ENFORCES**          | `sysdig_policy`       |
-| `sysdig_policy_evaluation` | **REVIEWED**          | `sysdig_image_scan`   |
-| `sysdig_scanner`           | **PERFORMED**         | `sysdig_image_scan`   |
-| `sysdig_team`              | **HAS**               | `sysdig_user`         |
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
+| --------------------- | --------------------- | --------------------- |
+| `sysdig_account`      | **HAS**               | `sysdig_image_scan`   |
+| `sysdig_account`      | **HAS**               | `sysdig_scanner`      |
+| `sysdig_account`      | **HAS**               | `sysdig_team`         |
+| `sysdig_account`      | **HAS**               | `sysdig_user`         |
+| `sysdig_image_scan`   | **IDENTIFIED**        | `sysdig_finding`      |
+| `sysdig_scanner`      | **PERFORMED**         | `sysdig_image_scan`   |
+| `sysdig_team`         | **HAS**               | `sysdig_user`         |
+
+### Mapped Relationships
+
+The following mapped relationships are created:
+
+| Source Entity `_type` | Relationship `_class` | Target Entity `_type` | Direction |
+| --------------------- | --------------------- | --------------------- | --------- |
+| `sysdig_finding`      | **IS**                | `*cve*`               | FORWARD   |
 
 <!--
 ********************************************************************************

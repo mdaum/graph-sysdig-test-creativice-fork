@@ -7,7 +7,7 @@ export const accountSpec: StepSpec<IntegrationConfig>[] = [
      * ENDPOINT: /api/user/me
      * PATTERN: Singleton
      */
-    id: 'fetch-account-details',
+    id: 'fetch-account',
     name: 'Fetch Account Details',
     entities: [
       {

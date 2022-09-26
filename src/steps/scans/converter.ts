@@ -3,8 +3,8 @@ import {
   Entity,
   parseTimePropertyValue,
 } from '@jupiterone/integration-sdk-core';
-import { ImageScanV2, SysdigResult } from '../../types';
 
+import { ImageScanV2, SysdigResult } from '../../types';
 import { Entities } from '../constants';
 
 export function getImageScanKey(id: string): string {
@@ -14,7 +14,10 @@ export function getImageScanKey(id: string): string {
 export function createImageScanEntity(data: SysdigResult): Entity {
   return createIntegrationEntity({
     entityData: {
-      source: data,
+      source: {
+        ...data,
+        createdOn: data.createdAt,
+      },
       assign: {
         _key: getImageScanKey(data.imageId),
         _type: Entities.IMAGE_SCAN._type,

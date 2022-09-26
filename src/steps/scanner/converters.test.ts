@@ -1,8 +1,7 @@
-import { getMockAccount } from '../../../test/mocks';
 import { createScannerEntity } from './converter';
 
-describe('#createAccountEntity', () => {
+describe('#createScannerEntity', () => {
   test('should convert to entity', () => {
-    expect(createScannerEntity(getMockAccount())).toMatchSnapshot();
+    expect(createScannerEntity({ name: 'Sysdig Scanner' })).toMatchSnapshot();
   });
 });

@@ -16,18 +16,6 @@ export const scansSpec: StepSpec<IntegrationConfig>[] = [
         _class: ['Assessment'],
       },
     ],
-    relationships: [],
-    dependsOn: [],
-    implemented: true,
-  },
-  {
-    /**
-     * ENDPOINT: n/a
-     * PATTERN: Build Child Relationships
-     */
-    id: 'build-account-and-image-scan-relationship',
-    name: 'Build Account and Image Scan Relationship',
-    entities: [],
     relationships: [
       {
         _type: 'sysdig_account_has_image_scan',
@@ -36,7 +24,7 @@ export const scansSpec: StepSpec<IntegrationConfig>[] = [
         targetType: 'sysdig_image_scan',
       },
     ],
-    dependsOn: ['fetch-image-scans', 'fetch-account-details'],
+    dependsOn: ['fetch-account'],
     implemented: true,
   },
   {

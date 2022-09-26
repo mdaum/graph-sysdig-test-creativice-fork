@@ -16,18 +16,6 @@ export const teamsSpec: StepSpec<IntegrationConfig>[] = [
         _class: ['Team'],
       },
     ],
-    relationships: [],
-    dependsOn: [],
-    implemented: true,
-  },
-  {
-    /**
-     * ENDPOINT: n/a
-     * PATTERN: Build Child Relationships
-     */
-    id: 'build-account-and-team-relationship',
-    name: 'Build Account and Team Relationship',
-    entities: [],
     relationships: [
       {
         _type: 'sysdig_account_has_team',
@@ -36,7 +24,7 @@ export const teamsSpec: StepSpec<IntegrationConfig>[] = [
         targetType: 'sysdig_team',
       },
     ],
-    dependsOn: ['fetch-teams', 'fetch-account-details'],
+    dependsOn: ['fetch-account'],
     implemented: true,
   },
   {

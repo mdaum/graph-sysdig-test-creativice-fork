@@ -4,8 +4,8 @@ import {
   IntegrationStepExecutionContext,
   RelationshipClass,
 } from '@jupiterone/integration-sdk-core';
-import { createAPIClient } from '../../client';
 
+import { createAPIClient } from '../../client';
 import { IntegrationConfig } from '../../config';
 import {
   Steps,
@@ -43,6 +43,7 @@ export async function fetchFindings({
                 from: imageScanEntity,
                 to: findingEntity,
               }),
+
               createFindingCveRelationship(
                 findingEntity,
                 vulnerabilityDetails.vuln,
@@ -60,10 +61,8 @@ export const findingsSteps: IntegrationStep<IntegrationConfig>[] = [
     id: Steps.FINDINGS,
     name: 'Fetch Findings',
     entities: [Entities.FINDING],
-    relationships: [
-      Relationships.IMAGE_SCAN_IDENTIFIED_FINDING,
-      MappedRelationships.FINDING_IS_CVE,
-    ],
+    relationships: [Relationships.IMAGE_SCAN_IDENTIFIED_FINDING],
+    mappedRelationships: [MappedRelationships.FINDING_IS_CVE],
     dependsOn: [Steps.IMAGE_SCANS],
     executionHandler: fetchFindings,
   },

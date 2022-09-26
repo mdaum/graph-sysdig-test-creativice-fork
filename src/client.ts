@@ -12,8 +12,6 @@ import {
   PaginatedTeams,
   PaginatedUsers,
   PaginatedVulnerabilities,
-  Policy,
-  PolicyEvaluation,
   SysdigAccount,
   SysdigResult,
   SysdigResultResponse,
@@ -284,47 +282,6 @@ export class APIClient {
     const response = await this.request(endpoint, 'GET');
     const body = response.json();
     return body;
-  }
-
-  /**
-   * Iterates each policy evaluations resource in the provider.
-   *
-   * @param pageIteratee receives each resource to produce entities/relationships
-   */
-  public async iteratePolicyEvaluations(
-    imageId: string,
-    pageIteratee: ResourceIteratee<PolicyEvaluation>,
-  ): Promise<void> {
-    // pagination not working for this endpoint
-    const endpoint = this.withBaseUri(
-      `api/scanning/scanresults/v2/results/${imageId}/policyEvaluations`,
-    );
-    const response = await this.request(endpoint, 'GET');
-
-    const body = await response.json();
-
-    for (const policy of body.data) {
-      await pageIteratee(policy);
-    }
-  }
-
-  /**
-   * Iterates each policy resource in the provider.
-   *
-   * @param pageIteratee receives each resource to produce entities/relationships
-   */
-  public async iteratePolicies(
-    pageIteratee: ResourceIteratee<Policy>,
-  ): Promise<void> {
-    // pagination not working for this endpoint
-    const endpoint = this.withBaseUri(`api/scanning/policies/v2/policies`);
-    const response = await this.request(endpoint, 'GET');
-
-    const body = await response.json();
-
-    for (const policy of body.policies) {
-      await pageIteratee(policy);
-    }
   }
 }
 
