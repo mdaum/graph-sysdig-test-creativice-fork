@@ -22,6 +22,8 @@ and this project adheres to
 | --------- | ---------------- | --------------- |
 | Finding   | `sysdig_finding` | `Finding`       |
 | Scanner   | `sysdig_scanner` | `Service`       |
+| Agent     | `sysdig_agent`   | `Scanner`       |
+| Cluster   | `sysdig_cluster` | `Cluster`       |
 
 - Added support for ingesting the following **new** relationships:
 
@@ -29,6 +31,7 @@ and this project adheres to
 | --------------------- | --------------------- | --------------------- |
 | `sysdig_image_scan`   | **IDENTIFIED**        | `sysdig_finding`      |
 | `sysdig_scanner`      | **PERFORMED**         | `sysdig_image_scan`   |
+| `sysdig_agent`        | **SCANS**             | `sysdig_cluster`      |
 
 - Added support for ingesting the following **new** mapped relationships:
 
